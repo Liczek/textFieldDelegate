@@ -27,9 +27,6 @@
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
-                        <connections>
-                            <action selector="didEndOnExitTextField" destination="KGk-i7-Jjw" eventType="editingDidEndOnExit" id="teh-ku-sTZ"/>
-                        </connections>
                     </textField>
                 </subviews>
                 <constraints>

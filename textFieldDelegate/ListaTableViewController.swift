@@ -31,7 +31,11 @@ class ListaTableViewController: UITableViewController, AddTableViewControllerDel
     
     
     func addTableViewController(_ cell: AddTableViewCell, didFinishAdding newTask: String) {
+        let newIndex = lista.count
         lista.append(newTask)
+        let indexPath = IndexPath(row: newIndex, section: 0)
+        tableView.insertRows(at: [indexPath], with: .automatic)
+        print("lista count after append: \(newTask)")
         tableView.reloadData()
         dismiss(animated: true, completion: nil)
     }    
@@ -52,6 +56,15 @@ class ListaTableViewController: UITableViewController, AddTableViewControllerDel
         cell.textLabel?.text = task
         return cell
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "" {
+//            let navigationControler = segue.destination as! UINavigationController
+//            let controller = navigationControler.viewControllers.first as! AddTableViewCell
+//            controller.
+//            
+//        }
+//    }
     
     
     

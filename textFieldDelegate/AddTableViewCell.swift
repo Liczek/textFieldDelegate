@@ -28,7 +28,7 @@ class AddTableViewCell: UITableViewCell, UITextFieldDelegate {
         super.awakeFromNib()
         
         self.addTextField.delegate = self
-        //nameTextField.addTarget(self, action: #selector(textFieldDidChange), for: .valueChanged)
+
         addTextField.addTarget(self, action: #selector(didEndOnExitTextField), for: .editingDidEndOnExit)
         didEndOnExitTextField()
     }
@@ -38,7 +38,7 @@ class AddTableViewCell: UITableViewCell, UITextFieldDelegate {
 
         // Configure the view for the selected state
     }
-    @IBAction func didEndOnExitTextField() {
+    func didEndOnExitTextField() {
         addTextField.resignFirstResponder()
         let newTask = addTextField.text!
         delegate?.addTableViewController(self, didFinishAdding: newTask)
