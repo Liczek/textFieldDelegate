@@ -9,35 +9,39 @@
 import UIKit
 
 protocol AddTableViewControllerDelegate: class {
-    func setNew(_ cell: AddTableViewCell, didSetNew taskName: String)
+    func addTableViewController(_ cell: AddTableViewCell, didFinishAdding newTask: String)
 }
 
-class AddTableViewCell: UITableViewCell {
+class AddTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     
     weak var delegate: AddTableViewControllerDelegate?
     
     @IBOutlet weak var addTextField: UITextField!
     
-    
-    @IBAction func setNewTaskName(_ sender: Any) {
-        let taskName = addTextField.text!
-        print(taskName)
-        delegate?.setNew(self, didSetNew: taskName)
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        return true
     }
-    
 
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        
-        
+        self.addTextField.delegate = self
+        //nameTextField.addTarget(self, action: #selector(textFieldDidChange), for: .valueChanged)
+        addTextField.addTarget(self, action: #selector(didEndOnExitTextField), for: .editingDidEndOnExit)
+        didEndOnExitTextField()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    @IBAction func didEndOnExitTextField() {
+        addTextField.resignFirstResponder()
+        let newTask = addTextField.text!
+        delegate?.addTableViewController(self, didFinishAdding: newTask)
     }
     
 }

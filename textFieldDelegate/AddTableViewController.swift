@@ -40,11 +40,5 @@ class AddTableViewController: UITableViewController, UITextFieldDelegate {
         return cell
     }
     
-    
-    @IBAction func doneBarButtonTapped(_ sender: Any) {
-        
-        
-    }
-    
 
 }

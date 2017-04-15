@@ -16,7 +16,6 @@
 		C841A5CA1EA16E7C0089A3A8 /* AddTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C841A5C81EA16E7C0089A3A8 /* AddTableViewCell.xib */; };
 		C841A5CC1EA16ECE0089A3A8 /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C841A5CB1EA16ECE0089A3A8 /* AddTableViewController.swift */; };
 		C841A5CE1EA16F080089A3A8 /* ListaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C841A5CD1EA16F080089A3A8 /* ListaTableViewController.swift */; };
-		C882F4EE1EA193A8002E666F /* ListaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C882F4ED1EA193A8002E666F /* ListaTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +30,6 @@
 		C841A5C81EA16E7C0089A3A8 /* AddTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTableViewCell.xib; sourceTree = "<group>"; };
 		C841A5CB1EA16ECE0089A3A8 /* AddTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
 		C841A5CD1EA16F080089A3A8 /* ListaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaTableViewController.swift; sourceTree = "<group>"; };
-		C882F4ED1EA193A8002E666F /* ListaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +64,6 @@
 			children = (
 				C841A5B21EA16CFF0089A3A8 /* AppDelegate.swift */,
 				C841A5B61EA16CFF0089A3A8 /* Main.storyboard */,
-				C882F4ED1EA193A8002E666F /* ListaTableViewCell.swift */,
 				C841A5CD1EA16F080089A3A8 /* ListaTableViewController.swift */,
 				C841A5CB1EA16ECE0089A3A8 /* AddTableViewController.swift */,
 				C841A5BC1EA16CFF0089A3A8 /* Assets.xcassets */,
@@ -154,7 +151,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C841A5C91EA16E7C0089A3A8 /* AddTableViewCell.swift in Sources */,
-				C882F4EE1EA193A8002E666F /* ListaTableViewCell.swift in Sources */,
 				C841A5BB1EA16CFF0089A3A8 /* textFieldDelegate.xcdatamodeld in Sources */,
 				C841A5B31EA16CFF0089A3A8 /* AppDelegate.swift in Sources */,
 				C841A5CC1EA16ECE0089A3A8 /* AddTableViewController.swift in Sources */,

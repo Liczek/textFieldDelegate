@@ -14,8 +14,6 @@ class ListaTableViewController: UITableViewController, AddTableViewControllerDel
     
     var lista = ["dom", "praca", "sport"]
     
-    let addTableViewCell = AddTableViewCell.self
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,14 +29,12 @@ class ListaTableViewController: UITableViewController, AddTableViewControllerDel
         print("Liczba elementów w lista: \(lista.count)")
     }
     
-    func setNew(_ cell: AddTableViewCell, didSetNew taskName: String) {
-        lista.append(taskName)
-        
+    
+    func addTableViewController(_ cell: AddTableViewCell, didFinishAdding newTask: String) {
+        lista.append(newTask)
         tableView.reloadData()
         dismiss(animated: true, completion: nil)
-        
-    }
-    
+    }    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
