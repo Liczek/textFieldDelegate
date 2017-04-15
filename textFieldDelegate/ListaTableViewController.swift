@@ -9,17 +9,13 @@
 import Foundation
 import UIKit
 
-class ListaTableViewController: UITableViewController, AddTableViewControllerDelegate {
-    
+class ListaTableViewController: UITableViewController {
     
     var lista = ["dom", "praca", "sport"]
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.reloadData()
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,7 +24,6 @@ class ListaTableViewController: UITableViewController, AddTableViewControllerDel
         tableView.reloadData()
         print("Liczba elementów w lista: \(lista.count)")
     }
-    
     
     func addTableViewController(_ cell: AddTableViewCell, didFinishAdding newTask: String) {
         let newIndex = lista.count
@@ -65,7 +60,6 @@ class ListaTableViewController: UITableViewController, AddTableViewControllerDel
 //            
 //        }
 //    }
-    
     
     
 }
