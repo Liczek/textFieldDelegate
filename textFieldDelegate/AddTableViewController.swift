@@ -8,14 +8,18 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class AddTableViewController: UITableViewController, UITextFieldDelegate, AddTableViewCellDelegate {
 
-    var taskName = ""
+    var newTaskName = ""
+    
+    var dataModel: DataModel!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         tableView.register(UINib(nibName: "AddTableViewCell", bundle: nil), forCellReuseIdentifier: "AddCell")
     }
     
@@ -31,12 +35,64 @@ class AddTableViewController: UITableViewController, UITextFieldDelegate, AddTab
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddCell") as! AddTableViewCell
         cell.delegate = self
         cell.addTextField.placeholder = "Enter new task name"
-        cell.addTextField.text = self.taskName
+        cell.addTextField.text = self.newTaskName
         return cell
     }
     
     func addTableViewCell(_ cell: AddTableViewCell, didFinishAdding newTask: String) {
-        self.taskName = newTask
+        self.newTaskName = newTask
+        print(newTask)
     }
+    
+    
+    @IBAction func doneBarButtonTapped(_ sender: Any) {
+        save(taskName: newTaskName)
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    
+    
+    func save(taskName: String) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "Zadanie", in: managedContext)!
+        
+        let zadanie = NSManagedObject(entity: entity, insertInto: managedContext)
+        
+        zadanie.setValue(taskName, forKey: "taskName")
+        
+        
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print(error)
+        }
+        
+        
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }

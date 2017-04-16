@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Hr-N7-dAg" id="4H7-v3-1BB">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -58,7 +58,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="ekran dodawania" id="pTO-A8-HVu">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="Xxb-L8-mZq"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="Xxb-L8-mZq">
+                            <connections>
+                                <action selector="doneBarButtonTapped:" destination="txq-rx-jGc" id="4at-5Y-Uvw"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rNf-YX-QOR" userLabel="First Responder" sceneMemberID="firstResponder"/>
