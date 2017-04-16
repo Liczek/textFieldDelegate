@@ -69,6 +69,7 @@ class AddTableViewController: UITableViewController, UITextFieldDelegate, AddTab
         
         do {
             try managedContext.save()
+//?????? dataModel.zadania.append(zadanie) ?????? wcześniej miałem taki kod a teraz jak go wpisuje to nil mi wywala, skoro same setValue dodaje wartosc do DataCore to po co jeszcze się robiło append do arreyki? w tamtym przypadku był to categories: [NSManagedObject] = []
         } catch let error as NSError {
             print(error)
         }
