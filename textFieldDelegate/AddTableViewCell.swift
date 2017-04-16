@@ -8,14 +8,13 @@
 
 import UIKit
 
-protocol AddTableViewControllerDelegate: class {
-    func addTableViewController(_ cell: AddTableViewCell, didFinishAdding newTask: String)
+protocol AddTableViewCellDelegate : class {
+    func addTableViewCell(_ cell: AddTableViewCell, didFinishAdding newTask: String)
 }
 
 class AddTableViewCell: UITableViewCell, UITextFieldDelegate {
     
-    
-    weak var delegate: AddTableViewControllerDelegate?
+    weak var delegate: AddTableViewCellDelegate?
     
     @IBOutlet weak var addTextField: UITextField!
     
@@ -28,20 +27,12 @@ class AddTableViewCell: UITableViewCell, UITextFieldDelegate {
         super.awakeFromNib()
         
         self.addTextField.delegate = self
-
-        addTextField.addTarget(self, action: #selector(didEndOnExitTextField), for: .editingDidEndOnExit)
-        didEndOnExitTextField()
+        self.addTextField.addTarget(self, action: #selector(didChangeEditing), for: .editingChanged)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    func didEndOnExitTextField() {
-        addTextField.resignFirstResponder()
+    
+    func didChangeEditing() {
         let newTask = addTextField.text!
-        delegate?.addTableViewController(self, didFinishAdding: newTask)
+        delegate?.addTableViewCell(self, didFinishAdding: newTask)
     }
     
 }
