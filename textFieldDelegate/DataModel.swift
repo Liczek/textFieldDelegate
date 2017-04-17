@@ -12,6 +12,6 @@ import CoreData
 
 class DataModel {
     
+    var categorie: [NSManagedObject] = []
     var zadania: [NSManagedObject] = []
-    
 }

@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--lista-->
+        <!--Categories-->
         <scene sceneID="4SL-Ky-LYR">
             <objects>
                 <tableViewController id="7OE-YC-Q6K" customClass="ListaTableViewController" customModule="textFieldDelegate" customModuleProvider="target" sceneMemberID="viewController">
@@ -25,6 +25,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="kVi-vZ-Ay6" kind="presentation" identifier="TasksCell" id="4SX-bP-alr"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -32,7 +35,7 @@
                             <outlet property="delegate" destination="7OE-YC-Q6K" id="fad-xI-rvK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="lista" id="OK4-5p-m5e">
+                    <navigationItem key="navigationItem" title="Categories" id="OK4-5p-m5e">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Bpc-9w-wcq">
                             <connections>
                                 <segue destination="1i4-DZ-z1C" kind="presentation" identifier="AddTask" id="fWa-8d-lGG"/>
@@ -44,7 +47,65 @@
             </objects>
             <point key="canvasLocation" x="1644" y="-226"/>
         </scene>
-        <!--ekran dodawania-->
+        <!--Tasks-->
+        <scene sceneID="hEp-RD-pUO">
+            <objects>
+                <tableViewController id="061-29-2CO" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bfi-Wo-a0n">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MQO-N6-pms">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MQO-N6-pms" id="xrT-vA-Mt9">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="061-29-2CO" id="6FI-IN-BLG"/>
+                            <outlet property="delegate" destination="061-29-2CO" id="1xU-eT-bzB"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Tasks" id="8fK-iy-OoY"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pqh-mS-WJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2417" y="506"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="00m-xz-yxw">
+            <objects>
+                <tableViewController id="UiJ-Bh-kGE" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="76g-4a-y37">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="PAx-au-XwW">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PAx-au-XwW" id="7No-s2-Yaw">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="UiJ-Bh-kGE" id="LPq-bH-9Ii"/>
+                            <outlet property="delegate" destination="UiJ-Bh-kGE" id="EbW-sK-eft"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Jl2-xN-1S1"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vkR-LG-wTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3915" y="506"/>
+        </scene>
+        <!--Add categorie-->
         <scene sceneID="EGJ-Fq-xkH">
             <objects>
                 <tableViewController id="txq-rx-jGc" customClass="AddTableViewController" customModule="textFieldDelegate" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,7 +118,12 @@
                             <outlet property="delegate" destination="txq-rx-jGc" id="shj-CW-WDn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="ekran dodawania" id="pTO-A8-HVu">
+                    <navigationItem key="navigationItem" title="Add categorie" id="pTO-A8-HVu">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uqL-eZ-g27">
+                            <connections>
+                                <action selector="cancelBarButtonTapped:" destination="txq-rx-jGc" id="OtU-48-wfa"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="Xxb-L8-mZq">
                             <connections>
                                 <action selector="doneBarButtonTapped:" destination="txq-rx-jGc" id="4at-5Y-Uvw"/>
@@ -104,6 +170,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBJ-j2-ahI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="868" y="-226"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Gc9-KH-OaX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kVi-vZ-Ay6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sNx-mi-Lsr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="061-29-2CO" kind="relationship" relationship="rootViewController" id="9Fw-OM-0lx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MCU-n2-S4S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1642.5" y="505.98591549295776"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Lx9-87-XeP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JNO-ty-Ho1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nWD-65-rCv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UiJ-Bh-kGE" kind="relationship" relationship="rootViewController" id="LJW-OI-j4r"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ko9-nw-nWD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3161.25" y="505.98591549295776"/>
         </scene>
     </scenes>
 </document>

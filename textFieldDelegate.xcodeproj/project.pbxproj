@@ -17,6 +17,7 @@
 		C841A5CC1EA16ECE0089A3A8 /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C841A5CB1EA16ECE0089A3A8 /* AddTableViewController.swift */; };
 		C841A5CE1EA16F080089A3A8 /* ListaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C841A5CD1EA16F080089A3A8 /* ListaTableViewController.swift */; };
 		C849E1491EA3819700B06224 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C849E1481EA3819700B06224 /* DataModel.swift */; };
+		C8FC65E71EA53FAF00D909B1 /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FC65E61EA53FAF00D909B1 /* TasksTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C841A5CB1EA16ECE0089A3A8 /* AddTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
 		C841A5CD1EA16F080089A3A8 /* ListaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaTableViewController.swift; sourceTree = "<group>"; };
 		C849E1481EA3819700B06224 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		C8FC65E61EA53FAF00D909B1 /* TasksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				C841A5CD1EA16F080089A3A8 /* ListaTableViewController.swift */,
 				C841A5CB1EA16ECE0089A3A8 /* AddTableViewController.swift */,
 				C849E1481EA3819700B06224 /* DataModel.swift */,
+				C8FC65E61EA53FAF00D909B1 /* TasksTableViewController.swift */,
 				C841A5BC1EA16CFF0089A3A8 /* Assets.xcassets */,
 				C841A5C81EA16E7C0089A3A8 /* AddTableViewCell.xib */,
 				C841A5C71EA16E7C0089A3A8 /* AddTableViewCell.swift */,
@@ -158,6 +161,7 @@
 				C841A5B31EA16CFF0089A3A8 /* AppDelegate.swift in Sources */,
 				C841A5CC1EA16ECE0089A3A8 /* AddTableViewController.swift in Sources */,
 				C841A5CE1EA16F080089A3A8 /* ListaTableViewController.swift in Sources */,
+				C8FC65E71EA53FAF00D909B1 /* TasksTableViewController.swift in Sources */,
 				C849E1491EA3819700B06224 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

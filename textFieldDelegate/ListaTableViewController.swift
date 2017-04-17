@@ -17,6 +17,9 @@ class ListaTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Categories"
+        
         fetchData()
         tableView.reloadData()
         
@@ -28,7 +31,7 @@ class ListaTableViewController: UITableViewController {
         tableView.reloadData()
         
 
-        print("Liczba elementów w lista: \(dataModel.zadania.count)")
+        print("Liczba elementów w lista: \(dataModel.categorie.count)")
     }
     
 //    func addTableViewController(_ cell: AddTableViewCell, didFinishAdding newTask: String) {
@@ -47,26 +50,16 @@ class ListaTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return dataModel.zadania.count
+        return dataModel.categorie.count
         
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath)
-        let task = dataModel.zadania[indexPath.row]
-        cell.textLabel?.text = task.value(forKey: "taskName") as? String
+        let task = dataModel.categorie[indexPath.row]
+        cell.textLabel?.text = task.value(forKey: "categoriaName") as? String
         return cell
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "" {
-//            let navigationControler = segue.destination as! UINavigationController
-//            let controller = navigationControler.viewControllers.first as! AddTableViewCell
-//            controller.
-//            
-//        }
-//    }
-    
     
     func fetchData() {
         
@@ -76,10 +69,10 @@ class ListaTableViewController: UITableViewController {
         
         let managedContext = appDelegate.persistentContainer.viewContext
         
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Zadanie")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Categoria")
         
         do {
-            dataModel.zadania = try managedContext.fetch(fetchRequest)
+            dataModel.categorie = try managedContext.fetch(fetchRequest)
         } catch let error as NSError{
             print("Fetch data problem\(error), \(error.userInfo)")
         }

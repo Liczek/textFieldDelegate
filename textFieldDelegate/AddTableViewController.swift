@@ -12,13 +12,15 @@ import CoreData
 
 class AddTableViewController: UITableViewController, UITextFieldDelegate, AddTableViewCellDelegate {
 
-    var newTaskName = ""
+    var newCategoriaName = ""
     
     var dataModel: DataModel!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Add new category"
         
         tableView.register(UINib(nibName: "AddTableViewCell", bundle: nil), forCellReuseIdentifier: "AddCell")
     }
@@ -34,37 +36,38 @@ class AddTableViewController: UITableViewController, UITextFieldDelegate, AddTab
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddCell") as! AddTableViewCell
         cell.delegate = self
-        cell.addTextField.placeholder = "Enter new task name"
-        cell.addTextField.text = self.newTaskName
+        cell.addTextField.placeholder = "Enter new category name"
+        cell.addTextField.autocorrectionType = .no
+        cell.addTextField.text = self.newCategoriaName
         return cell
     }
     
-    func addTableViewCell(_ cell: AddTableViewCell, didFinishAdding newTask: String) {
-        self.newTaskName = newTask
-        print(newTask)
+    func addTableViewCell(_ cell: AddTableViewCell, didFinishAdding newName: String) {
+        self.newCategoriaName = newName
+        print(newName)
     }
     
     
     @IBAction func doneBarButtonTapped(_ sender: Any) {
-        save(taskName: newTaskName)
+        save(categoryName: newCategoriaName)
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func cancelBarButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }   
     
-    
-    
-    
-    func save(taskName: String) {
+    func save(categoryName: String) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
         
         let managedContext = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "Zadanie", in: managedContext)!
+        let entity = NSEntityDescription.entity(forEntityName: "Categoria", in: managedContext)!
         
-        let zadanie = NSManagedObject(entity: entity, insertInto: managedContext)
+        let categoria = NSManagedObject(entity: entity, insertInto: managedContext)
         
-        zadanie.setValue(taskName, forKey: "taskName")
+        categoria.setValue(categoryName, forKey: "categoriaName")
         
         
         do {

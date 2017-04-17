@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AddTableViewCellDelegate : class {
-    func addTableViewCell(_ cell: AddTableViewCell, didFinishAdding newTask: String)
+    func addTableViewCell(_ cell: AddTableViewCell, didFinishAdding newName: String)
 }
 
 class AddTableViewCell: UITableViewCell, UITextFieldDelegate {
@@ -31,8 +31,8 @@ class AddTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
     func didChangeEditing() {
-        let newTask = addTextField.text!
-        delegate?.addTableViewCell(self, didFinishAdding: newTask)
+        let newName = addTextField.text!
+        delegate?.addTableViewCell(self, didFinishAdding: newName)
     }
     
 }
