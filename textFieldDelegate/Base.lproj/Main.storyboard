@@ -26,7 +26,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="kVi-vZ-Ay6" kind="presentation" identifier="TasksCell" id="4SX-bP-alr"/>
+                                    <segue destination="kVi-vZ-Ay6" kind="show" identifier="Tasks" id="8UB-dt-B11"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -38,7 +38,7 @@
                     <navigationItem key="navigationItem" title="Categories" id="OK4-5p-m5e">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Bpc-9w-wcq">
                             <connections>
-                                <segue destination="1i4-DZ-z1C" kind="presentation" identifier="AddTask" id="fWa-8d-lGG"/>
+                                <segue destination="1i4-DZ-z1C" kind="presentation" identifier="AddCategoria" id="fWa-8d-lGG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -50,13 +50,14 @@
         <!--Tasks-->
         <scene sceneID="hEp-RD-pUO">
             <objects>
-                <tableViewController id="061-29-2CO" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pqh-mS-WJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="061-29-2CO" customClass="TasksTableViewController" customModule="textFieldDelegate" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bfi-Wo-a0n">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MQO-N6-pms">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TasksCell" id="MQO-N6-pms">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MQO-N6-pms" id="xrT-vA-Mt9">
@@ -70,36 +71,39 @@
                             <outlet property="delegate" destination="061-29-2CO" id="1xU-eT-bzB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Tasks" id="8fK-iy-OoY"/>
+                    <navigationItem key="navigationItem" title="Tasks" id="8fK-iy-OoY">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="naS-eK-rnG"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Fo7-bK-r0w">
+                            <connections>
+                                <segue destination="JNO-ty-Ho1" kind="presentation" identifier="AddZadanie" id="f0z-jp-CvH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pqh-mS-WJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2417" y="506"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Add Task-->
         <scene sceneID="00m-xz-yxw">
             <objects>
-                <tableViewController id="UiJ-Bh-kGE" sceneMemberID="viewController">
+                <tableViewController id="UiJ-Bh-kGE" customClass="AddTaskTableViewController" customModule="textFieldDelegate" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="76g-4a-y37">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="PAx-au-XwW">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PAx-au-XwW" id="7No-s2-Yaw">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="UiJ-Bh-kGE" id="LPq-bH-9Ii"/>
                             <outlet property="delegate" destination="UiJ-Bh-kGE" id="EbW-sK-eft"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Jl2-xN-1S1"/>
+                    <navigationItem key="navigationItem" title="Add Task" id="Jl2-xN-1S1">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="1OM-r6-IeZ"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="Pzt-aQ-fwL">
+                            <connections>
+                                <action selector="doneBarButtonTapped:" destination="UiJ-Bh-kGE" id="HlK-wk-QSi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vkR-LG-wTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -174,6 +178,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Gc9-KH-OaX">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MCU-n2-S4S" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kVi-vZ-Ay6" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sNx-mi-Lsr">
@@ -185,7 +190,6 @@
                         <segue destination="061-29-2CO" kind="relationship" relationship="rootViewController" id="9Fw-OM-0lx"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MCU-n2-S4S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1642.5" y="505.98591549295776"/>
         </scene>
