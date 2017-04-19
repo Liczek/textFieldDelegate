@@ -52,9 +52,10 @@ class AddTaskTableViewController: UITableViewController, UITextFieldDelegate, Ad
             return
         }
         let managedContext = appDelegate.persistentContainer.viewContext
-        let zadanieNameEntity = NSEntityDescription.entity(forEntityName: "zadanieName", in: managedContext)!
+        let zadanieNameEntity = NSEntityDescription.entity(forEntityName: "Zadanie", in: managedContext)!
         let zadanie = NSManagedObject(entity: zadanieNameEntity, insertInto: managedContext)
         zadanie.setValue(zadanieName, forKey: "zadanieName")
+        
         
         do {
             try managedContext.save()

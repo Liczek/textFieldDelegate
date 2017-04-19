@@ -2,14 +2,20 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="15G1421" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Categoria" representedClassName="Categoria" syncable="YES" codeGenerationType="class">
         <attribute name="categoriaName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="dodatkowy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Dodatkowy" inverseName="categoria" inverseEntity="Dodatkowy" syncable="YES"/>
         <relationship name="zadanie" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Zadanie" inverseName="categoria" inverseEntity="Zadanie" syncable="YES"/>
     </entity>
-    <entity name="Zadanie" representedClassName="Zadanie" syncable="YES" codeGenerationType="class">
+    <entity name="Dodatkowy" representedClassName="Dodatkowy" syncable="YES" codeGenerationType="class">
+        <attribute name="dodatkowyName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="categoria" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Categoria" inverseName="dodatkowy" inverseEntity="Categoria" syncable="YES"/>
+    </entity>
+    <entity name="Zadanie" representedClassName="Zadanie" parentEntity="Categoria" syncable="YES" codeGenerationType="class">
         <attribute name="zadanieName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="categoria" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Categoria" inverseName="zadanie" inverseEntity="Categoria" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Categoria" positionX="-63" positionY="-18" width="128" height="73"/>
-        <element name="Zadanie" positionX="-63" positionY="-9" width="128" height="73"/>
+        <element name="Categoria" positionX="-648" positionY="-144" width="128" height="88"/>
+        <element name="Zadanie" positionX="-351" positionY="107" width="128" height="73"/>
+        <element name="Dodatkowy" positionX="-54" positionY="9" width="128" height="73"/>
     </elements>
 </model>

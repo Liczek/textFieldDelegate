@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Hr-N7-dAg" id="4H7-v3-1BB">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -50,7 +50,6 @@
         <!--Tasks-->
         <scene sceneID="hEp-RD-pUO">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pqh-mS-WJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="061-29-2CO" customClass="TasksTableViewController" customModule="textFieldDelegate" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bfi-Wo-a0n">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -72,7 +71,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Tasks" id="8fK-iy-OoY">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="naS-eK-rnG"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="naS-eK-rnG">
+                            <connections>
+                                <action selector="doneBarButtoTapped:" destination="061-29-2CO" id="STK-EX-CMD"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Fo7-bK-r0w">
                             <connections>
                                 <segue destination="JNO-ty-Ho1" kind="presentation" identifier="AddZadanie" id="f0z-jp-CvH"/>
@@ -80,6 +83,7 @@
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pqh-mS-WJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2417" y="506"/>
         </scene>
@@ -178,7 +182,6 @@
         <!--Navigation Controller-->
         <scene sceneID="Gc9-KH-OaX">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MCU-n2-S4S" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kVi-vZ-Ay6" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sNx-mi-Lsr">
@@ -190,6 +193,7 @@
                         <segue destination="061-29-2CO" kind="relationship" relationship="rootViewController" id="9Fw-OM-0lx"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MCU-n2-S4S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1642.5" y="505.98591549295776"/>
         </scene>

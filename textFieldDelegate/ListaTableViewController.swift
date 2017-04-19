@@ -52,6 +52,7 @@ class ListaTableViewController: UITableViewController {
 
         return dataModel.categorie.count
         
+        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
